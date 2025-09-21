@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-indigo-600">DataPortfolio</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 pt-20 px-4">
+        <div class="flex flex-col space-y-4">
+            <a href="#home" class="text-gray-700 hover:text-indigo-600 text-lg transition">Home</a>
+            <a href="#about" class="text-gray-700 hover:text-indigo-600 text-lg transition">About</a>
+            <a href="#skills" class="text-gray-700 hover:text-indigo-600 text-lg transition">Skills</a>
+            <a href="#projects" class="text-gray-700 hover:text-indigo-600 text-lg transition">Projects</a>
+            <a href="#contact" class="text-gray-700 hover:text-indigo-600 text-lg transition">Contact</a>
+            <button id="close-menu" class="absolute top-4 right-4 text-gray-700">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Hi, I'm <span class="text-indigo-200">Alex</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-indigo-100 mb-6">Data Analyst & Visualization Expert</h2>
+                    <p class="text-lg text-indigo-50 mb-8">Transforming raw data into meaningful insights that drive business decisions and growth.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-indigo-50 transition">View Work</a>
+                        <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-indigo-600 transition">Contact Me</a>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-indigo-400 rounded-full opacity-20 blur"></div>
+                        <img src="http://static.photos/technology/640x360/10" alt="Data Analyst" class="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">About Me</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6" data-aos="fade-up"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">
+                    I'm passionate about uncovering the stories hidden in data and presenting them in compelling ways.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="http://static.photos/office/640x360/15" alt="About Me" class="rounded-lg shadow-xl">
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Turning Data Into Decisions</h3>
+                    <p class="text-gray-600 mb-6">
+                        With over 5 years of experience in data analysis, I specialize in collecting, processing, and analyzing data to help businesses make informed decisions. My expertise spans across various industries including finance, healthcare, and e-commerce.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        I hold a Master's degree in Data Science and have completed multiple certifications in advanced analytics and machine learning. My approach combines technical skills with business acumen to deliver actionable insights.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i data-feather="award" class="text-indigo-600 mr-2"></i>
+                            <span class="text-gray-700">Certified Data Analyst</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="database" class="text-indigo-600 mr-2"></i>
+                            <span class="text-gray-700">5+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="bar-chart-2" class="text-indigo-600 mr-2"></i>
+                            <span class="text-gray-700">50+ Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">My Skills</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6" data-aos="fade-up"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">
+                    I combine technical expertise with analytical thinking to extract meaningful insights from complex datasets.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Technical Skills -->
+                <div data-aos="fade-up" data-aos-delay="100" class="skill-card bg-gray-50 p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="code" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Technical Skills</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Python</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">SQL</span>
+                                <span class="text-gray-500">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">R</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Excel</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualization Tools -->
+                <div data-aos="fade-up" data-aos-delay="200" class="skill-card bg-gray-50 p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="pie-chart" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Visualization Tools</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Tableau</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Power BI</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Matplotlib</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">D3.js</span>
+                                <span class="text-gray-500">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Skills -->
+                <div data-aos="fade-up" data-aos-delay="300" class="skill-card bg-gray-50 p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i data-feather="briefcase" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Business Skills</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Data Storytelling</span>
+                                <span class="text-gray-500">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Statistical Analysis</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Problem Solving</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Project Management</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Featured Projects</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6" data-aos="fade-up"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">
+                    Here are some of my recent data analysis projects that delivered measurable business impact.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="project-card bg-white rounded-xl shadow-md overflow-hidden relative">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/finance/640x360/5" alt="Sales Analysis Dashboard" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="bar-chart-2" class="text-indigo-600 mr-2"></i>
+                            <span class="text-sm text-indigo-600">Data Visualization</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Sales Analysis Dashboard</h3>
+                        <p class="text-gray-600 mb-4">Interactive dashboard analyzing regional sales performance and trends for a retail chain.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">Tableau</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">SQL</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">ETL</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <a href="#" class="text-white px-6 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="project-card bg-white rounded-xl shadow-md overflow-hidden relative">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/health/640x360/7" alt="Healthcare Analytics" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="activity" class="text-indigo-600 mr-2"></i>
+                            <span class="text-sm text-indigo-600">Predictive Modeling</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Patient Readmission Prediction</h3>
+                        <p class="text-gray-600 mb-4">Machine learning model to predict patient readmission risk with 85% accuracy.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">Scikit-learn</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">Pandas</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <a href="#" class="text-white px-6 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="project-card bg-white rounded-xl shadow-md overflow-hidden relative">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/technology/640x360/12" alt="Customer Segmentation" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <i data-feather="users" class="text-indigo-600 mr-2"></i>
+                            <span class="text-sm text-indigo-600">Cluster Analysis</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Customer Segmentation Analysis</h3>
+                        <p class="text-gray-600 mb-4">Unsupervised learning to identify distinct customer segments for targeted marketing.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">R</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">K-means</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">PCA</span>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-indigo-600 bg-opacity-90 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <a href="#" class="text-white px-6 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-indigo-600 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
+                    View All Projects
+                    <i data-feather="arrow-right" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-indigo-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Client Testimonials</h2>
+                <div class="w-20 h-1 bg-white mx-auto mb-6" data-aos="fade-up"></div>
+                <p class="text-lg max-w-3xl mx-auto" data-aos="fade-up">
+                    Here's what people I've worked with have to say about my work.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-indigo-700 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/1" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-indigo-200 text-sm">Marketing Director, RetailCo</p>
+                        </div>
+                    </div>
+                    <p class="text-indigo-100">"Alex's customer segmentation analysis transformed our marketing strategy. We saw a 30% increase in campaign effectiveness after implementing his recommendations."</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-indigo-700 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/2" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-indigo-200 text-sm">CEO, HealthTech Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-indigo-100">"The predictive model Alex developed helped us reduce patient readmissions by 22%, saving our organization millions annually. His work was exceptional."</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-indigo-700 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/3" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">David Rodriguez</h4>
+                            <p class="text-indigo-200 text-sm">VP of Sales, FinServe Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-indigo-100">"Alex's sales dashboard gave our team real-time visibility into performance metrics we didn't even know we needed. Game-changing insights delivered beautifully."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Get In Touch</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6" data-aos="fade-up"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">
+                    Have a data challenge you need help with? I'd love to hear about it.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition">Send Message</button>
+                    </form>
+                </div>
+                <div data-aos="fade-left" class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                            <i data-feather="mail" class="text-indigo-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Email</h3>
+                            <p class="text-gray-600">hello@dataanalystportfolio.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                            <i data-feather="phone" class="text-indigo-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Phone</h3>
+                            <p class="text-gray-600">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                            <i data-feather="map-pin" class="text-indigo-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Location</h3>
+                            <p class="text-gray-600">San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Connect With Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
+                                <i data-feather="github"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
+                                <i data-feather="instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">DataPortfolio</h3>
+                    <p class="text-gray-400">Transforming data into actionable insights that drive business success.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to my newsletter for data insights and analysis tips.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg text-gray-800 w-full">
+                        <button type="submit" class="bg-indigo-600 px-4 py-2 rounded-r-lg hover:bg-indigo-700 transition">
+                            <i data-feather="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Data Analyst Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            feather.replace();
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Feather icons replacement
+        feather.replace();
+    </script>
+</body>
+</html>
