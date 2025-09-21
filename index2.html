@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraj Kumar | Data Analyst</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+            transition: width 1s ease-in-out;
+        }
+        .github-calendar {
+            width: 100%;
+            height: 128px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .github-calendar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Suraj Kumar</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Home</a>
+                        <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">About</a>
+                        <a href="#projects" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Projects</a>
+                        <a href="#resume" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Resume</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-800 transition">
+                        <i data-feather="moon" class="hidden"></i>
+                        <i data-feather="sun" class="hidden"></i>
+                    </button>
+                    <button class="md:hidden p-2 rounded-full hover:bg-gray-800 transition" id="mobile-menu-button">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">About</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Projects</a>
+                <a href="#resume" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Resume</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div id="vanta-bg" class="absolute inset-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 z-10">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Suraj Kumar</span>  👋</h1>
+                <h2 class="text-xl md:text-3xl font-medium mb-6">I'm a <span id="typed" class="text-blue-400"></span></h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-8">
+                    Turning data into insights and stories through analysis and visualization.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#projects" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition">View Projects</a>
+                    <a href="#contact" class="px-6 py-3 border border-gray-700 rounded-lg font-medium hover:bg-gray-800 transition">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="glass-card p-8 rounded-xl" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-4">Who I Am</h3>
+                    <p class="text-gray-300 mb-6">
+                        I'm currently pursuing BCA in Data Analytics from MMDU University. Passionate about uncovering insights from data using Python, SQL, and visualization tools. I love solving real-world problems through data-driven decisions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/suraj-kumar-2307skp/" target="_blank" class="p-3 bg-gray-700 rounded-full hover:bg-blue-600 transition">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="https://github.com/surajpathak23" target="_blank" class="p-3 bg-gray-700 rounded-full hover:bg-gray-600 transition">
+                            <i data-feather="github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">My Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Python</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar rounded-full h-2" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Pandas/Numpy</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar rounded-full h-2" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>SQL</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar rounded-full h-2" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Tableau</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar rounded-full h-2" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Machine Learning</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar rounded-full h-2" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">My Projects</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card rounded-xl overflow-hidden hover:shadow-lg transition" data-aos="zoom-in">
+                    <img src="http://static.photos/technology/640x360/1" alt="Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Data Cleaning Project</h3>
+                        <p class="text-gray-300 mb-4">Cleaned and transformed messy datasets into analysis-ready formats using Python and Pandas.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-400 hover:underline">View Details</a>
+                            <div class="flex items-center space-x-2">
+                                <span class="flex items-center text-gray-400">
+                                    <i data-feather="star" class="w-4 h-4 mr-1"></i> 12
+                                </span>
+                                <span class="flex items-center text-gray-400">
+                                    <i data-feather="git-branch" class="w-4 h-4 mr-1"></i> 5
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="glass-card rounded-xl overflow-hidden hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="http://static.photos/technology/640x360/2" alt="Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Visualization Dashboard</h3>
+                        <p class="text-gray-300 mb-4">Interactive dashboard created with Tableau to visualize sales data trends.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-400 hover:underline">View Details</a>
+                            <div class="flex items-center space-x-2">
+                                <span class="flex items-center text-gray-400">
+                                    <i data-feather="star" class="w-4 h-4 mr-1"></i> 8
+                                </span>
+                                <span class="flex items-center text-gray-400">
+                                    <i data-feather="git-branch" class="w-4 h-4 mr-1"></i> 3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="glass-card rounded-xl overflow-hidden hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="http://static.photos/technology/640x360/3" alt="Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Student Marks Prediction</h3>
+                        <p class="text-gray-300 mb-4">Streamlit app that predicts student performance using ML algorithms.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-400 hover:underline">View Details</a>
+                            <div class="flex items-center space-x-2">
+                                <span class="flex items-center text-gray-400">
+                                    <i data-feather="star" class="w-4 h-4 mr-1"></i> 15
+                                </span>
+                                <span class="flex items-center text-gray-400">
+                                    <i data-feather="git-branch" class="w-4 h-4 mr-1"></i> 7
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="https://github.com/surajpathak23" target="_blank" class="inline-flex items-center px-6 py-3 border border-gray-700 rounded-lg font-medium hover:bg-gray-800 transition">
+                    <i data-feather="github" class="mr-2"></i> View All Projects on GitHub
+                </a>
+            </div>
+            
+            <!-- GitHub Activity -->
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-xl font-bold mb-6 text-center">My GitHub Activity</h3>
+                <div class="github-calendar" id="github-calendar">
+                    <!-- This would be replaced with actual GitHub calendar via API -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">My Education</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group" data-aos="fade-right">
+                    <div class="font-medium text-lg mb-1 sm:mb-0">BCA in Data Analytics</div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between mb-1">
+                        <div class="text-blue-400">MMDU University, Ambala, Haryana</div>
+                        <div class="text-gray-400">2023 - 2026</div>
+                    </div>
+                    <div class="text-gray-300">CGPA: 8.04</div>
+                    <div class="absolute left-0 sm:left-24 h-full w-0.5 bg-gray-700 group-last:before:hidden before:absolute before:left-0 before:top-0 before:w-4 before:h-4 before:rounded-full before:bg-blue-500 before:-translate-x-1/2"></div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group" data-aos="fade-right" data-aos-delay="100">
+                    <div class="font-medium text-lg mb-1 sm:mb-0">12th Grade</div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between mb-1">
+                        <div class="text-blue-400">J.L.N College Dehri-on-Son, Bihar</div>
+                        <div class="text-gray-400">2020 - 2022</div>
+                    </div>
+                    <div class="text-gray-300">Percentage: 58%</div>
+                    <div class="absolute left-0 sm:left-24 h-full w-0.5 bg-gray-700 group-last:before:hidden before:absolute before:left-0 before:top-0 before:w-4 before:h-4 before:rounded-full before:bg-blue-500 before:-translate-x-1/2"></div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group" data-aos="fade-right" data-aos-delay="200">
+                    <div class="font-medium text-lg mb-1 sm:mb-0">10th Grade</div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between mb-1">
+                        <div class="text-blue-400">High School Baulia, Rohtas, Bihar</div>
+                        <div class="text-gray-400">2019 - 2020</div>
+                    </div>
+                    <div class="text-gray-300">Percentage: 78%</div>
+                    <div class="absolute left-0 sm:left-24 h-full w-0.5 bg-gray-700 group-last:before:hidden before:absolute before:left-0 before:top-0 before:w-4 before:h-4 before:rounded-full before:bg-blue-500 before:-translate-x-1/2"></div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition">
+                    <i data-feather="download" class="mr-2"></i> Download Resume (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                <i data-feather="mail"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-gray-400">suraj@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                <i data-feather="phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <p class="text-gray-400">+91 9142496994</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                <i data-feather="linkedin"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/suraj-kumar-2307skp/" target="_blank" class="text-blue-400 hover:underline">linkedin.com/in/suraj-kumar-2307skp</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="p-3 bg-gray-800 rounded-lg mr-4">
+                                <i data-feather="github"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">GitHub</h4>
+                                <a href="https://github.com/surajpathak23" target="_blank" class="text-blue-400 hover:underline">github.com/surajpathak23</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p class="text-gray-400">© 2023 Suraj Kumar. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/suraj-kumar-2307skp/" target="_blank" class="text-gray-400 hover:text-blue-400 transition">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="https://github.com/surajpathak23" target="_blank" class="text-gray-400 hover:text-gray-300 transition">
+                        <i data-feather="github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Social Icons -->
+    <div class="fixed right-6 bottom-6 space-y-4 z-50">
+        <a href="https://www.linkedin.com/in/suraj-kumar-2307skp/" target="_blank" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition" data-aos="fade-left" data-aos-delay="100">
+            <i data-feather="linkedin" class="text-white"></i>
+        </a>
+        <a href="https://github.com/surajpathak23" target="_blank" class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center shadow-lg hover:bg-gray-600 transition" data-aos="fade-left" data-aos-delay="200">
+            <i data-feather="github" class="text-white"></i>
+        </a>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize Typed.js
+        document.addEventListener('DOMContentLoaded', function() {
+            var typed = new Typed('#typed', {
+                strings: ['Data Analyst', 'Data Visualization Enthusiast', 'Python Developer', 'SQL Explorer'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true
+            });
+
+            // Initialize Vanta.js
+            VANTA.WAVES({
+                el: "#vanta-bg",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x1e293b,
+                shininess: 35.00,
+                waveHeight: 15.00,
+                waveSpeed: 0.50,
+                zoom: 0.65
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    feather.replace();
+                } else {
+                    feather.replace();
+                }
+            });
+
+            // Theme toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const moonIcon = themeToggle.querySelector('i[data-feather="moon"]');
+            const sunIcon = themeToggle.querySelector('i[data-feather="sun"]');
+            
+            // Check for saved theme preference or use preferred color scheme
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                moonIcon.classList.remove('hidden');
+                sunIcon.classList.add('hidden');
+            }
+            
+            themeToggle.addEventListener('click', function() {
+                // Toggle icons
+                moonIcon.classList.toggle('hidden');
+                sunIcon.classList.toggle('hidden');
+                
+                // If set via local storage previously
+                if (localStorage.getItem('color-theme')) {
+                    if (localStorage.getItem('color-theme') === 'light') {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('color-theme', 'dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('color-theme', 'light');
+                    }
+                } else {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('color-theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('color-theme', 'dark');
+                    }
+                }
+            });
+
+            // Replace all icons
+            feather.replace();
+        });
+    </script>
+</body>
+</html>
